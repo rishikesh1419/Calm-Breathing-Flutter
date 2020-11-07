@@ -1,11 +1,13 @@
+import 'package:calm_breathing/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
-import 'Breathing.dart';
+import 'breathing.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Calm Breathing")),
+      // appBar: AppBar(title: Text("Calm Breathing")),
+      appBar: MyAppBar(home: true),
       body: Column(
         children: [
           Expanded(
@@ -13,6 +15,16 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Container(
+                    height: 200.0,
+                    child: const Text(
+                      "Calm Breathing",
+                      style: TextStyle(
+                        fontSize: 50.0,
+                        color: Colors.blueGrey,
+                      ),
+                    ),
+                  ),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (_) {

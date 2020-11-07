@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class BreatherError extends StatelessWidget {
+class InfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      child: const Text("Info Screen"),
     );
   }
 }
