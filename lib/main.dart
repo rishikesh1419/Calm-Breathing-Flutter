@@ -1,3 +1,4 @@
+import 'package:calm_breathing/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
@@ -12,7 +13,7 @@ class CalmBreathing extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomeScreen(),

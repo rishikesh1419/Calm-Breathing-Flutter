@@ -1,3 +1,4 @@
+import 'package:calm_breathing/utils/constants.dart';
 import 'package:calm_breathing/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'breathing.dart';
@@ -6,6 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: black,
       appBar: MyAppBar(home: true),
       body: Column(
         children: [
@@ -20,7 +22,7 @@ class HomeScreen extends StatelessWidget {
                       "Calm Breathing",
                       style: TextStyle(
                         fontSize: 50.0,
-                        color: Colors.blueGrey,
+                        color: green,
                       ),
                     ),
                   ),

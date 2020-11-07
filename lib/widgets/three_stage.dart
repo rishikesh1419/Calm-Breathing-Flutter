@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:calm_breathing/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class ThreeStage extends StatefulWidget {
@@ -45,7 +46,7 @@ class _ThreeStageState extends State<ThreeStage> with TickerProviderStateMixin {
     return Container(
       height: 180.0 + 50* _breathingController.value,
       decoration: BoxDecoration(
-      color: Colors.greenAccent,
+      color: greenAccent,
         shape: BoxShape.circle,
       ),
       child: Center(child: Text(_action)),

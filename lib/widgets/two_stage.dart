@@ -1,3 +1,4 @@
+import 'package:calm_breathing/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class TwoStage extends StatefulWidget {
@@ -15,29 +16,28 @@ class _TwoStageState extends State<TwoStage> with TickerProviderStateMixin {
       vsync: this,
       duration: const Duration(milliseconds: 1750),
     )
-    ..addStatusListener((status) {
-      if(status == AnimationStatus.completed) {
-        _breathingController.duration = const Duration(milliseconds: 2750);
-        _action = 'Breathe Out';
-        _breathingController.reverse();
-      } else if (status == AnimationStatus.dismissed) {
-        _action = 'Breathe In';
-        _breathingController.forward();
-      }
-    })
-    ..addListener(() {
-      setState(() {
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          _breathingController.duration = const Duration(milliseconds: 2750);
+          _action = 'Breathe Out';
+          _breathingController.reverse();
+        } else if (status == AnimationStatus.dismissed) {
+          _action = 'Breathe In';
+          _breathingController.forward();
+        }
+      })
+      ..addListener(() {
+        setState(() {});
       });
-    });
     _breathingController.forward();
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180.0 + 50* _breathingController.value,
+      height: 180.0 + 50 * _breathingController.value,
       decoration: BoxDecoration(
-      color: Colors.greenAccent,
+        color: greenAccent,
         shape: BoxShape.circle,
       ),
       child: Center(child: Text(_action)),

@@ -1,3 +1,4 @@
+import 'package:calm_breathing/utils/constants.dart';
 import 'package:calm_breathing/widgets/breather_error.dart';
 import 'package:calm_breathing/widgets/three_stage.dart';
 import 'package:calm_breathing/widgets/two_stage.dart';
@@ -27,6 +28,7 @@ class Breathing extends StatelessWidget {
     }
 
     return Scaffold(
+        backgroundColor: black,
         appBar: AppBar(
           title: Text(pattern),
         ),
