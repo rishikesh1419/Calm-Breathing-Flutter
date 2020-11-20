@@ -8,10 +8,11 @@ class TwoStage extends StatefulWidget {
 
 class _TwoStageState extends State<TwoStage> with TickerProviderStateMixin {
   AnimationController _breathingController;
-  String _action = 'Breathe In';
+  String _action;
   @override
   void initState() {
     super.initState();
+    _action = 'Breathe In';
     _breathingController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1750),
@@ -33,14 +34,39 @@ class _TwoStageState extends State<TwoStage> with TickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    _breathingController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 180.0 + 50 * _breathingController.value,
-      decoration: BoxDecoration(
-        color: greenAccent,
-        shape: BoxShape.circle,
-      ),
-      child: Center(child: Text(_action)),
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          height: 210.0 + 70 * _breathingController.value,
+          decoration: BoxDecoration(
+            gradient: RadialGradient(colors: [
+              greenAccent,
+              greenAccent,
+              greenAccent,
+              greenAccent,
+              Colors.black,
+            ]),
+            shape: BoxShape.circle,
+          ),
+          // child: Center(child: Text(_action)),
+        ),
+        Container(
+          height: 160.0 + 50 * _breathingController.value,
+          decoration: BoxDecoration(
+            color: greenAccent,
+            shape: BoxShape.circle,
+          ),
+          child: Center(child: Text(_action)),
+        ),
+      ],
     );
   }
 }
