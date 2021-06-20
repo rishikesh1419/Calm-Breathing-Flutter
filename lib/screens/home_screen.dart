@@ -34,7 +34,14 @@ class HomeScreen extends StatelessWidget {
                     },
                     child: Container(
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                      child: const Text("7/11 Pattern"),
+                      child: const Text(
+                        "7/11 Pattern",
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                          color: black,
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -48,7 +55,14 @@ class HomeScreen extends StatelessWidget {
                     },
                     child: Container(
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                      child: const Text("4-7-8 Pattern"),
+                      child: const Text(
+                        "4-7-8 Pattern",
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                          color: black,
+                        ),
+                      ),
                     ),
                   ),
                 ],

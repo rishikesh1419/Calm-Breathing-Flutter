@@ -11,7 +11,7 @@ class InfoScreen extends StatelessWidget {
       appBar: MyAppBar(info: true),
       body: Padding(
         padding: const EdgeInsets.symmetric(
-          vertical: 24.0,
+          vertical: 30.0,
           horizontal: 24.0,
         ),
         child: Column(

@@ -26,6 +26,7 @@ class InfoItem extends StatelessWidget {
             style: TextStyle(
               color: lightGreen,
               fontSize: 22,
+              fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.left,
           ),
