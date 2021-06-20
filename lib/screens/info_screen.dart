@@ -1,6 +1,8 @@
 import 'package:calm_breathing/utils/constants.dart';
 import 'package:calm_breathing/widgets/app_bar.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InfoScreen extends StatelessWidget {
   @override
@@ -36,24 +38,45 @@ class InfoScreen extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            // Container(
-            //   width: double.infinity,
-            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-              const Text(
-                "Source",
+            Container(
+              padding: EdgeInsets.only(
+                top: 12.0,
+                right: 8.0,
+              ),
+              alignment: Alignment.centerRight,
+              child: RichText(
                 textAlign: TextAlign.end,
-                style: TextStyle(
-                  color: lightGreen,
-                  fontStyle: FontStyle.italic,
-                  fontSize: 16,
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () async {
+                          var url =
+                              "https://www.healthline.com/health/4-7-8-breathing";
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                      text: "Source",
+                      style: TextStyle(
+                        color: lightGreen,
+                        fontStyle: FontStyle.italic,
+                        fontSize: 16,
+                      ),
+                    ),
+                    WidgetSpan(
+                      child: Icon(
+                        Icons.open_in_new,
+                        color: lightGreen,
+                        size: 16,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Icon(
-                Icons.open_in_new,
-                color: lightGreen,
-                size: 16,
-              )
-            ])
+            ),
           ],
         ),
       ),
