@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
                   Container(
                     height: 200.0,
                     child: const Text(
-                      "Calm Breathing",
+                      appName,
                       style: TextStyle(
                         fontSize: 50.0,
                         color: green,

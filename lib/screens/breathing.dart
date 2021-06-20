@@ -30,7 +30,11 @@ class Breathing extends StatelessWidget {
     return Scaffold(
         backgroundColor: black,
         appBar: AppBar(
-          title: Text(pattern),
+          iconTheme: IconThemeData(color: black),
+          title: Text(
+            pattern,
+            style: TextStyle(color: black),
+          ),
         ),
         body: Column(
           children: [

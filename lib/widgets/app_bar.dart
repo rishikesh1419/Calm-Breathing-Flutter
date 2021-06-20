@@ -8,12 +8,12 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({Key key, this.home, this.info}) : super(key: key);
 
   @override
-  Size get preferredSize => const Size.fromHeight(70);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: transparent,
+      // backgroundColor: transparent,
       elevation: 0.0,
       leading: home == null
           ? GestureDetector(
@@ -22,7 +22,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
               },
               child: Icon(
                 Icons.arrow_back_outlined,
-                color: green,
+                color: black,
               ))
           : null,
       actions: info == null
@@ -34,10 +34,10 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                   }));
                 },
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(right: 10),
                   child: Icon(
                     Icons.info,
-                    color: green,
+                    color: black,
                   ),
                 ),
               ),

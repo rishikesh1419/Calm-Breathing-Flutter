@@ -11,7 +11,7 @@ class CalmBreathing extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: appName,
       theme: ThemeData(
         primarySwatch: green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
